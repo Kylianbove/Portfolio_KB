@@ -6,7 +6,7 @@
 (function($) {
 
     "use strict";
-    
+
     var cfg = {
         scrollDuration : 800, // smoothscroll duration
         mailChimpURL   : ''   // mailchimp url
@@ -23,7 +23,7 @@
    /* Preloader
     * -------------------------------------------------- */
     var ssPreloader = function() {
-        
+
         $("html").addClass('ss-preload');
 
         $WIN.on('load', function() {
@@ -31,16 +31,16 @@
             //force page scroll position to top at page refresh
             $('html, body').animate({ scrollTop: 0 }, 'normal');
 
-            // will first fade out the loading animation 
+            // will first fade out the loading animation
             $("#loader").fadeOut("slow", function() {
                 // will fade out the whole DIV that covers the website.
                 $("#preloader").delay(300).fadeOut("slow");
-            }); 
-            
-            // for hero content animations 
+            });
+
+            // for hero content animations
             $("html").removeClass('ss-preload');
             $("html").addClass('ss-loaded');
-        
+
         });
     };
 
@@ -48,7 +48,7 @@
    /* Menu on Scrolldown
     * ------------------------------------------------------ */
     var ssMenuOnScrolldown = function() {
-        
+
         var hdr = $('.s-header'),
             hdrTop = $('.s-header').offset().top;
 
@@ -66,7 +66,7 @@
 
 
    /* Mobile Menu
-    * ---------------------------------------------------- */ 
+    * ---------------------------------------------------- */
     var ssMobileMenu = function() {
 
         var toggleButton = $('.header-menu-toggle'),
@@ -90,7 +90,7 @@
 
             if (nav.hasClass('mobile')) {
                 toggleButton.toggleClass('is-clicked');
-                nav.slideToggle(); 
+                nav.slideToggle();
             }
         });
 
@@ -123,14 +123,14 @@
             offset: '25%'
 
         });
-        
+
     };
 
 
    /* Masonry
-    * ---------------------------------------------------- */ 
+    * ---------------------------------------------------- */
     var ssMasonryFolio = function () {
-        
+
         var containerBricks = $('.masonry');
 
         containerBricks.imagesLoaded(function () {
@@ -148,7 +148,7 @@
     var ssPhotoswipe = function() {
         var items = [],
             $pswp = $('.pswp')[0],
-            $folioItems = $('.item-folio');
+            $folioItems = $('.image_slick');
 
         // get items
         $folioItems.each( function(i) {
@@ -163,7 +163,7 @@
                 $size = $thumbLink.data('size').split('x'),
                 $width  = $size[0],
                 $height = $size[1];
-        
+
             var item = {
                 src  : $href,
                 w    : $width,
@@ -193,13 +193,15 @@
             });
 
         });
+
+      
     };
 
 
    /* slick slider
     * ------------------------------------------------------ */
     var ssSlickSlider = function() {
-        
+
         $('.testimonials__slider').slick({
             arrows: false,
             dots: true,
@@ -217,11 +219,11 @@
    /* Smooth Scrolling
     * ------------------------------------------------------ */
     var ssSmoothScroll = function() {
-        
+
         $('.smoothscroll').on('click', function (e) {
             var target = this.hash,
             $target    = $(target);
-            
+
                 e.preventDefault();
                 e.stopPropagation();
 
@@ -247,7 +249,7 @@
 
         $('.alert-box').on('click', '.alert-box__close', function() {
             $(this).parent().fadeOut(500);
-        }); 
+        });
 
     };
 
@@ -255,7 +257,7 @@
    /* Animate On Scroll
     * ------------------------------------------------------ */
     var ssAOS = function() {
-        
+
         AOS.init( {
             offset: 200,
             duration: 600,
