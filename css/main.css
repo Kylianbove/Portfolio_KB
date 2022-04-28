@@ -61,7 +61,9 @@ html {
   }
 
 }
-
+.pswp__img {
+  height: auto !important;
+}
 html,
 body {
   height: 100%;
